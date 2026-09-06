@@ -1,6 +1,6 @@
 ---
 name: doc_ingest
-description: Ingest unstructured notes, transcripts, or raw text into standard Wiki Markdown documents with YAML frontmatter.
+description: Use this skill when the user provides raw text, notes, transcripts, or asks to compile unstructured ideas into structured wiki documents with YAML frontmatter.
 ---
 
 # Document Ingestion Skill (`doc_ingest`)

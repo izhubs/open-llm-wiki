@@ -1,6 +1,6 @@
 ---
 name: doc_qc
-description: Audit wiki health, verify link integrity, validate YAML frontmatter, and clean up orphan documents.
+description: Use this skill to audit wiki health, verify internal links, validate document schema, detect orphan files, or execute check_docs.py quality gates.
 ---
 
 # Document Quality Control Skill (`doc_qc`)

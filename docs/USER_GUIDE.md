@@ -1,4 +1,4 @@
-﻿# Open LLM-Wiki: Comprehensive Operator & Agent Guide
+# Open LLM-Wiki: Comprehensive Operator & Agent Guide
 
 > A practical guide for humans managing knowledge and AI agents operating within this repository.
 
@@ -141,3 +141,21 @@ When `python scripts/check_docs.py` reports errors, use this quick resolution gu
 | `frontmatter id does not match filename` | `id: foo` but file is `bar.md` | Rename file to `foo.md` or set `id: bar`. |
 | `Broken link '...'` | Target markdown file was moved or deleted | Update the link target path relative to the file. |
 | `Orphan document` | File exists in `wiki/` but is not linked anywhere | Add `- [Title](./filename.md)` into `wiki/README.md`. |
+
+---
+
+## 6. Extending with Custom Modern Skills
+
+To add a new specialized capability for AI agents in this repository, follow the Modern Skill package structure under `.agent/skills/`:
+
+```
+.agent/skills/<skill_name>/
+├── SKILL.md                  # Main orchestration contract
+├── scripts/                  # (Optional) Deterministic scripts for calculations/checks
+└── references/               # (Optional) Deep reference docs loaded selectively
+```
+
+### Steps to create a new skill:
+1. **Create Directory:** `.agent/skills/<skill_name>/`.
+2. **Author `SKILL.md`:** Prepend YAML frontmatter with `name` and a routing-optimized `description` starting with `"Use this skill when..."` (3rd person) so assistants can discover it semantically without full prompt loading.
+3. **Keep it Lean:** Keep `SKILL.md` under 200 lines as the orchestrator. Offload complex schemas or cheat sheets to `references/`.

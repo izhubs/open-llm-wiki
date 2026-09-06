@@ -17,7 +17,7 @@ Most AI-assisted documentation setups fail due to **context drift** and **file s
 Open LLM-Wiki solves this with five core rules:
 
 1. **Simple UX (< 10-Second Setup):** Zero external libraries, zero databases, zero build steps. Works out of the box with Python 3 and any AI coding assistant (Google Antigravity, Cursor, Claude Code, Windsurf, Aider).
-2. **Own the Migration Moment:** Turn unstructured meeting notes, transcripts, and brain dumps into structured knowledge in minutes with the built-in `doc_ingest` workflow.
+2. **Own the Migration Moment:** Turn unstructured meeting notes, transcripts, and brain dumps into structured knowledge in minutes with the built-in `doc_ingest` skill.
 3. **AI is the Operating Interface:** AI agents don't just read documents; they maintain the wiki index, cross-reference concepts, and keep links healthy following `AGENTS.md`.
 4. **Indestructible Core:** A standalone, zero-dependency validation script (`scripts/check_docs.py`) acts as a deterministic gate against broken links, missing metadata, and orphan documents.
 5. **100% Local-First Data Ownership:** All content is pure Markdown on your local file system. No proprietary cloud database, no vendor lock-in.
@@ -29,6 +29,7 @@ Open LLM-Wiki solves this with five core rules:
 | Feature | Heavy RAG (Vector DB / LangChain) | Manual Notes (Notion / Obsidian) | **Open LLM-Wiki** |
 | :--- | :---: | :---: | :---: |
 | **Setup Time** | Hours (Docker, embeddings, APIs) | Minutes | **< 10 seconds** (Zero dependencies) |
+| **Context Overhead** | Bloated context window (>50k tokens) | N/A | **✅ Progressive Disclosure (< 40 tokens cold start)** |
 | **Knowledge Quality** | Fragmented chunks, transient | High quality, but high human effort | **Compiled, structured, compounding** |
 | **Anti-Spam Gate** | ❌ None | ❌ None | **✅ Python linter (`check_docs.py`)** |
 | **Data Ownership** | Cloud / Vendor lock-in | Proprietary / Local | **✅ 100% Local Markdown on disk** |
@@ -46,7 +47,7 @@ open-llm-wiki/
 ├── README.md             # This guide
 ├── LICENSE               # MIT License
 ├── .agent/
-│   └── skills/           # Agent skills and workflows (doc_ingest, doc_qc)
+│   └── skills/           # Modern skills with progressive disclosure (doc_ingest, doc_qc)
 ├── docs/
 │   └── USER_GUIDE.md     # Comprehensive guide for humans & AI agents
 ├── scripts/

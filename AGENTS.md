@@ -13,6 +13,7 @@ This document defines the operating rules, data governance, and boundaries for A
    - All structured knowledge belongs in `wiki/`.
    - All generated exports, reports, or data artifacts belong in `output/`.
 4. **Direct Communication:** No flattering openers, no corporate roleplay ("Dear CEO", "I am delighted to..."). State facts, diffs, and actions directly.
+5. **Progressive Disclosure:** Capabilities and procedures are modularized in `.agent/skills/<name>/SKILL.md`. Agents load skill instructions just-in-time to keep context windows clean.
 
 ---
 
@@ -24,7 +25,7 @@ This document defines the operating rules, data governance, and boundaries for A
 ├── MEMORY.md             # Project context and user preferences
 ├── README.md             # Repository documentation
 ├── .agent/
-│   └── skills/           # Reusable skills and workflows
+│   └── skills/           # Modular skills with progressive disclosure
 │       ├── doc_ingest/   # Ingest raw text/notes into structured wiki pages
 │       └── doc_qc/       # Audit links, frontmatter, and orphan documents
 ├── scripts/
